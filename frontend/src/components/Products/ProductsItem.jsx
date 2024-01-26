@@ -2,7 +2,7 @@ import "./ProductsItem.css";
 
 const ProductsItem = () => {
   return (
-    <li className="product-item glide__slide">
+    <div className="product-item glide__slide">
       <div className="product-image">
         <a href="#">
           <img src="img/products/product2/1.png" alt="" className="img1" />
@@ -50,7 +50,7 @@ const ProductsItem = () => {
           </a>
         </div>
       </div>
-    </li>
+    </div>
   );
 };
 
