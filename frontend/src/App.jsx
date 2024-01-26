@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import ProductDetailsPage from "./pages/ProductDetailsPage";
+import HomePage from "./pages/HomePage";
 
 /*
 import BlogDetailsPage from "./pages/BlogDetailsPage";
@@ -10,13 +10,13 @@ import AuthPage from "./pages/AuthPage";
 import Auth from "./components/Auth/Auth.Jsx";
 import ShopPage from "./pages/ShopPage";
 import ContactPage from "./pages/ContactPage";
-import HomePage from "./pages/HomePage";
+import ProductDetailsPage from "./pages/ProductDetailsPage";
 */
 
 function App() {
   return (
     <React.Fragment>
-      <ProductDetailsPage />
+      <HomePage />
     </React.Fragment>
   );
 }
