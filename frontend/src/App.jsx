@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import HomePage from "./pages/HomePage";
+import ProductDetailsPage from "./pages/ProductDetailsPage";
 
 /*
 import BlogDetailsPage from "./pages/BlogDetailsPage";
@@ -16,7 +16,7 @@ import ProductDetailsPage from "./pages/ProductDetailsPage";
 function App() {
   return (
     <React.Fragment>
-      <HomePage />
+      <ProductDetailsPage />
     </React.Fragment>
   );
 }

@@ -20,8 +20,8 @@
 }
 
 .single-product .gallery-thumbs {
-    display: flex;
-    column-gap: 10px;
+    /*   display: flex;
+    column-gap: 10px; */
 }
 
 .single-product .gallery-thumbs li {
@@ -61,3 +61,10 @@
 .single-product .glide__arrow--right {
     right: 0;
 }
+
+/* .gallery-thumbs{
+    display: flex;
+  }
+  .gallery-thumbs img{
+    width: 100px;
+      } */

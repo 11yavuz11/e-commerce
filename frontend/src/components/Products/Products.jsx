@@ -1,9 +1,10 @@
-import "./Products.css";
-import Slider from "react-slick";
 import { useState } from "react";
-import ProductsItem from "./ProductsItem";
-import ProductsData from "../../data.json";
+import ProductItem from "./ProductItem";
+import Slider from "react-slick";
 import PropTypes from "prop-types";
+
+import productsData from "../../data.json";
+import "./Products.css";
 
 function NextBtn({ onClick }) {
   return (
@@ -12,11 +13,9 @@ function NextBtn({ onClick }) {
     </button>
   );
 }
-
 NextBtn.propTypes = {
   onClick: PropTypes.func,
 };
-
 function PrevBtn({ onClick }) {
   return (
     <button className="glide__arrow glide__arrow--left" onClick={onClick}>
@@ -29,7 +28,7 @@ PrevBtn.propTypes = {
 };
 
 const Products = () => {
-  const [products] = useState(ProductsData);
+  const [products] = useState(productsData);
 
   const sliderSettings = {
     dots: false,
@@ -55,7 +54,6 @@ const Products = () => {
       },
     ],
   };
-
   return (
     <section className="products">
       <div className="container">
@@ -66,15 +64,12 @@ const Products = () => {
         <div className="product-wrapper product-carousel">
           <Slider {...sliderSettings}>
             {products.map((product) => (
-              <ProductsItem product={product} key={product.id} />
+              <ProductItem product={product} key={product.id} />
             ))}
           </Slider>
-
-          <div className="glide__arrows"></div>
         </div>
       </div>
     </section>
   );
 };
-
 export default Products;

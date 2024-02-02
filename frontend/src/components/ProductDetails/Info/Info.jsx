@@ -1,6 +1,6 @@
-import "./ProductInfo.css";
+import "./Info.css";
 
-const ProductInfo = () => {
+const Info = () => {
   return (
     <div className="product-info">
       <h1 className="product-title">Ridley High Waist</h1>
@@ -118,4 +118,4 @@ const ProductInfo = () => {
   );
 };
 
-export default ProductInfo;
+export default Info;
