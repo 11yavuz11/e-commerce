@@ -1,4 +1,4 @@
-.categories .category-item {
+.categories .category-item{
     background-color: #f5f5f5;
     border-radius: 4px;
     flex: 1;
@@ -7,7 +7,7 @@
     justify-content: center;
 }
 
-.categories .category-item a {
+.categories .category-item a{
     display: inline-block;
     padding: 10px;
     text-align: center;
@@ -16,11 +16,13 @@
     font-weight: 500;
 }
 
-.categories .category-item .category-image {
-    width: 100%;
-    transition: transform ease .2s;
+.categories .category-item .category-image{
+        width: 100%;
+        transition: transform ease .2s;
 }
 
-.categories .category-item .category-image:hover {
+.categories .category-item .category-image:hover{
     transform: scale(1.1);
 }
+
+

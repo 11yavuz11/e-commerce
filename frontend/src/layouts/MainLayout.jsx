@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Footer from "../components/Layout/Footer/Footer";
 import Header from "../components/Layout/Header/Header";
-import PropTypes from "prop-types";
+import Proptypes from "prop-types";
 import Search from "../components/Modals/Search/Search";
 import Dialog from "../components/Modals/Dialog/Dialog";
 
@@ -10,13 +10,13 @@ const MainLayout = ({ children }) => {
   const [isDialogShow, setIsDialogShow] = useState(false);
 
   useEffect(() => {
-    const dialogStatus = localStorage.getItem("diaog")
-      ? JSON.parse(localStorage.getItem("diaog"))
-      : localStorage.setItem("diaog", JSON.stringify(true));
+    const dialogStatus = localStorage.getItem("dialog")
+      ? JSON.parse(localStorage.getItem("dialog"))
+      : localStorage.setItem("dialog", JSON.stringify(true));
 
     setTimeout(() => {
       setIsDialogShow(dialogStatus);
-    }, 3000);
+    }, 2000);
   }, []);
 
   return (
@@ -29,7 +29,9 @@ const MainLayout = ({ children }) => {
     </div>
   );
 };
+
 export default MainLayout;
+
 MainLayout.propTypes = {
-  children: PropTypes.node,
+  children: Proptypes.node,
 };

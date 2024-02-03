@@ -1,19 +1,21 @@
-import "./Dialog.css";
 import PropTypes from "prop-types";
+import "./Dialog.css";
 
 const Dialog = ({ isDialogShow, setIsDialogShow }) => {
+
   const handleCloseDialog = (event) => {
     const checked = event.target.checked;
-    localStorage.setItem("diaog", JSON.stringify(!checked));
+    localStorage.setItem("dialog", JSON.stringify(!checked))
   };
+
   return (
     <div className={`modal-dialog ${isDialogShow ? "show" : ""}`}>
       <div className="modal-content">
-        <button className="modal-close " onClick={() => setIsDialogShow(false)}>
+        <button className="modal-close" onClick={() => setIsDialogShow(false)}>
           <i className="bi bi-x"></i>
         </button>
         <div className="modal-image">
-          <img src="img/modal-dialog.jpg" alt="" />
+          <img src="/img/modal-dialog.jpg" alt="" />
         </div>
         <div className="popup-wrapper">
           <div className="popup-content">
@@ -29,7 +31,7 @@ const Dialog = ({ isDialogShow, setIsDialogShow }) => {
               <button className="btn btn-primary">SUBSCRIBE</button>
               <label>
                 <input type="checkbox" onChange={handleCloseDialog} />
-                <span>Do not show this popup again</span>
+                <span>Don`t show this popup again</span>
               </label>
             </form>
           </div>

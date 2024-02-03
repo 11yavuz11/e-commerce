@@ -1,16 +1,17 @@
-import "./Campaigns.css";
-import CampaignsItem from "./CampaignsItem";
+import CampaignItem from "./CampaignItem";
+import "./Campaigns.css"
+
 const Campaigns = () => {
   return (
     <section className="campaigns">
       <div className="container">
         <div className="campaigns-wrapper">
-          <CampaignsItem />
-          <CampaignsItem />
+          <CampaignItem />
+          <CampaignItem />
         </div>
         <div className="campaigns-wrapper">
-          <CampaignsItem />
-          <CampaignsItem />
+          <CampaignItem />
+          <CampaignItem />
         </div>
       </div>
     </section>

@@ -1,7 +1,10 @@
-import Cart from "../components/Cart/Cart";
+import Cart from "../components/Cart/Cart"
 
-const ContactPage = () => {
-  return <Cart />;
-};
 
-export default ContactPage;
+const CartPage = () => {
+  return (
+        <Cart />
+  )
+}
+
+export default CartPage

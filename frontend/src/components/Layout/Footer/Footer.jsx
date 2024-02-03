@@ -1,6 +1,6 @@
 import React from "react";
-import "./Footer.css";
 import Policy from "../Policy/Policy";
+import "./Footer.css";
 
 const Footer = () => {
   return (
@@ -17,7 +17,7 @@ const Footer = () => {
                       Get our emails for info on new items, sales and more.
                     </h3>
                     <p className="subscribe-desc">
-                      We will email you a voucher worth $10 off your first order
+                      We`ll email you a voucher worth $10 off your first order
                       over $50.
                     </p>
                   </div>
@@ -51,10 +51,10 @@ const Footer = () => {
                 <div className="footer-contact-bottom">
                   <div className="download-app">
                     <a href="#">
-                      <img src="img/footer/app-store.png" alt="" />
+                      <img src="/img/footer/app-store.png" alt="" />
                     </a>
                     <a href="#">
-                      <img src="img/footer/google-play.png" alt="" />
+                      <img src="/img/footer/google-play.png" alt="" />
                     </a>
                   </div>
                   <p className="privacy-text">
@@ -182,7 +182,7 @@ const Footer = () => {
                 </p>
               </div>
               <a href="#">
-                <img src="img/footer/cards.png" alt="" />
+                <img src="/img/footer/cards.png" alt="" />
               </a>
               <div className="footer-menu">
                 <ul className="footer-menu-list">

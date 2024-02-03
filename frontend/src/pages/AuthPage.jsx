@@ -1,7 +1,10 @@
-import Auth from "../components/Auth/Auth.Jsx";
+import Auth from "../components/Auth/Auth";
 
-const ContactPage = () => {
-  return <Auth />;
+
+const AuthPage = () => {
+  return (
+      <Auth />
+  );
 };
 
-export default ContactPage;
+export default AuthPage;

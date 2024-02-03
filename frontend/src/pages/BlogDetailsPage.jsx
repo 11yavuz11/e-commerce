@@ -1,7 +1,10 @@
 import BlogDetails from "../components/BlogDetails/BlogDetails";
 
+
 const BlogDetailsPage = () => {
-  return <BlogDetails />;
+  return (
+      <BlogDetails />
+  );
 };
 
 export default BlogDetailsPage;

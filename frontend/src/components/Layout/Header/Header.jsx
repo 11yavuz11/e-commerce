@@ -1,7 +1,14 @@
+import { useContext } from "react";
+import Proptypes from "prop-types";
+import { Link, useLocation } from "react-router-dom";
+import { CartContext } from "../../../context/CartProvider";
 import "./Header.css";
-import PropTypes from "prop-types";
 
 const Header = ({ setIsSearchShow }) => {
+  const { cartItems } = useContext(CartContext);
+  const user = localStorage.getItem("user");
+  const { pathname } = useLocation();
+
   return (
     <header>
       <div className="global-notification">
@@ -20,18 +27,21 @@ const Header = ({ setIsSearchShow }) => {
               <i className="bi bi-list" id="btn-menu"></i>
             </div>
             <div className="header-left">
-              <a href="index.html" className="logo">
+              <Link to={"/"} className="logo">
                 LOGO
-              </a>
+              </Link>
             </div>
             <div className="header-center" id="sidebar">
               <nav className="navigation">
                 <ul className="menu-list">
                   <li className="menu-list-item">
-                    <a href="index.html" className="menu-link active">
+                    <Link
+                      to={"/"}
+                      className={`menu-link ${pathname === "/" && "active"}`}
+                    >
                       Home
                       <i className="bi bi-chevron-down"></i>
-                    </a>
+                    </Link>
                     <div className="menu-dropdown-wrapper">
                       <ul className="menu-dropdown-content">
                         <li>
@@ -65,10 +75,15 @@ const Header = ({ setIsSearchShow }) => {
                     </div>
                   </li>
                   <li className="menu-list-item megamenu-wrapper">
-                    <a href="shop.html" className="menu-link">
+                    <Link
+                      to={"/shop"}
+                      className={`menu-link ${
+                        pathname === "/shop" && "active"
+                      }`}
+                    >
                       Shop
                       <i className="bi bi-chevron-down"></i>
-                    </a>
+                    </Link>
                     <div className="menu-dropdown-wrapper">
                       <div className="menu-dropdown-megamenu">
                         <div className="megamenu-links">
@@ -153,7 +168,7 @@ const Header = ({ setIsSearchShow }) => {
                         </div>
                         <div className="megamenu-single">
                           <a href="#">
-                            <img src="img/mega-menu.jpg" alt="" />
+                            <img src="/img/mega-menu.jpg" alt="" />
                           </a>
                           <h3 className="megamenu-single-title">
                             JOIN THE LAYERING GANG
@@ -172,14 +187,24 @@ const Header = ({ setIsSearchShow }) => {
                     </div>
                   </li>
                   <li className="menu-list-item">
-                    <a href="blog.html" className="menu-link">
+                    <Link
+                      to={"/blog"}
+                      className={`menu-link ${
+                        pathname === "/blog" && "active"
+                      }`}
+                    >
                       Blog
-                    </a>
+                    </Link>
                   </li>
                   <li className="menu-list-item">
-                    <a href="contact.html" className="menu-link">
+                    <Link
+                      to={"/contact"}
+                      className={`menu-link ${
+                        pathname === "/contact" && "active"
+                      }`}
+                    >
                       Contact
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </nav>
@@ -187,24 +212,45 @@ const Header = ({ setIsSearchShow }) => {
             </div>
             <div className="header-right">
               <div className="header-right-links">
-                <a href="account.html" className="header-account">
+                <Link to={"/auth"} className="header-account">
                   <i className="bi bi-person"></i>
-                </a>
+                </Link>
                 <button
                   className="search-button"
                   onClick={() => setIsSearchShow(true)}
                 >
                   <i className="bi bi-search"></i>
                 </button>
-                <a href="#">
+                {/* <a href="#">
                   <i className="bi bi-heart"></i>
-                </a>
+                </a> */}
                 <div className="header-cart">
-                  <a href="cart.html" className="header-cart-link">
+                  <Link to={"/cart"} className="header-cart-link">
                     <i className="bi bi-bag"></i>
-                    <span className="header-cart-count">0</span>
-                  </a>
+                    <span className="header-cart-count">
+                      {cartItems.length}
+                    </span>
+                  </Link>
                 </div>
+                {user && (
+                  <button
+                    className="search-button"
+                    onClick={() => {
+                      if (
+                        window.confirm(
+                          "Çıkış yapmak istediğinize emin misiniz?"
+                        )
+                      ) {
+                        {
+                          localStorage.removeItem("user");
+                          window.location.href = "/";
+                        }
+                      }
+                    }}
+                  >
+                    <i className="bi bi-box-arrow-right"></i>
+                  </button>
+                )}
               </div>
             </div>
           </div>
@@ -217,5 +263,5 @@ const Header = ({ setIsSearchShow }) => {
 export default Header;
 
 Header.propTypes = {
-  setIsSearchShow: PropTypes.func,
+  setIsSearchShow: Proptypes.func,
 };
