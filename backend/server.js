@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const mainRoute = require("./routes/index.js");
+const logger = require("morgan");
 const app = express();
 const port = 3000;
 
@@ -15,6 +16,10 @@ const connect = async () => {
     console.log("Error connecting to MongoDB", error);
   }
 };
+
+// Middlewares
+app.use(logger("dev"));
+app.use(express.json());
 
 app.use("/api", mainRoute);
 
