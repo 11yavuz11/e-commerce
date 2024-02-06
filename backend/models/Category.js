@@ -1,16 +1,9 @@
 const mongoose = require("mongoose");
 
-const CategorySchema = new mongoose.Schema(
+const CategorySchema = mongoose.Schema(
   {
-    name: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-    img: {
-      type: String,
-      required: true,
-    },
+    name: { type: String, required: true },
+    img: { type: String, required: true },
   },
   { timestamps: true }
 );
